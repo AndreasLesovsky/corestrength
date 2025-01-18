@@ -1,59 +1,67 @@
-# ErsteAngularApp
+# E-Commerce Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## Projektbeschreibung
+Diese Anwendung ermöglicht es Nutzern, Produkte auszuwählen, in den Warenkorb zu legen und mit Gutscheinen beim Checkout Rabatte zu erhalten. Die App bietet grundlegende Funktionen wie einen Warenkorb mit bearbeitbaren Mengen und eine einfache Formularvalidierung.
 
-## Development server
+## Live Demo
+Eine Live-Demo der Anwendung ist unter folgendem Link erreichbar: [https://corestrength.andreas-lesovsky-web.dev](https://corestrength.andreas-lesovsky-web.dev)
 
-To start a local development server, run:
+## Features
+- **Responsive Design** mit **Bootstrap**.
+- **Warenkorb**: Produkte können hinzugefügt und die Quantität bearbeitet werden. Der Warenkorb wird mithilfe von **Angular Signals** im `CartService` verwaltet und der Gesamtpreis wird dynamisch angepasst.
+- **Gutscheincodes**: Benutzer können Gutscheincodes beim Checkout einlösen und sehen den Rabatt sofort dank **Angular Signals**.
+- **Validierungen**: Der Warenkorb, das Checkout-Formular und die Gutscheincodes werden validiert. Benutzer erhalten sofortige Rückmeldungen, z. B. bei einem leeren Warenkorb, unvollständigem Formular oder ungültigen Gutscheinen.
+- **Darkmode**: Mit einem Button lässt sich der Darkmode ein- und ausschalten. Der Zustand wird im **localStorage** gespeichert, sodass beim nächsten Besuch automatisch der letzte Zustand wiederhergestellt wird.
+- **Verwendung von SCSS** für das Styling, mit Hilfe von **Bootstrap**.
 
-```bash
-ng serve
-```
+## Installation
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Klone das Repository:
+   ```bash
+   git clone https://github.com/deinBenutzername/deinRepo.git
+   ```
 
-## Code scaffolding
+2. Installiere die Abhängigkeiten:
+   ```bash
+   npm install
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. Starte den Entwicklungsserver:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng generate component component-name
-```
+4. Browser öffnen und [http://localhost:4200](http://localhost:4200) aufrufen.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Technologien
+- **Angular** 
+- **TypeScript**
+- **Bootstrap 5**
+- **SCSS**
 
-```bash
-ng generate --help
-```
+## Angular Features
+- **Angular Signals**
+- **Komponenten**
+- **Services**
+- **Dependency Injection**
+- **Routing**
+- **FormsModule**
 
-## Building
+## Funktionen im Detail
 
-To build the project run:
+### Warenkorb
+Der Warenkorb speichert die hinzugefügten Produkte im **CartService** als Signal. Benutzer können die Menge jedes Produkts bearbeiten, und der Gesamtpreis wird sofort angepasst.
 
-```bash
-ng build
-```
+### Gutscheincodes
+Gutscheincodes können beim Checkout eingegeben werden, und der Rabatt wird sofort angezeigt. Die Gutscheincodes werden ebenfalls validiert.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Validierung
+- **Warenkorb**: Zeigt eine Warnung, wenn der Warenkorb leer ist.
+- **Checkout-Formular**: Validiert alle erforderlichen Felder und gibt Rückmeldungen zu fehlenden oder ungültigen Eingaben.
+- **Gutscheincodes**: Wird überprüft, ob der Gutscheincode gültig ist und ob er bereits verwendet wurde.
 
-## Running unit tests
+### Darkmode
+Die Darkmode-Funktion wird über das `data-bs-theme`-Attribut von **Bootstrap** umgesetzt. Der Zustand des Darkmodes wird im **localStorage** gespeichert, und beim nächsten Laden der Seite wird der Zustand des Geräts oder des Nutzers übernommen.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Lizenz
+Dieses Projekt ist unter der [Lizenzname] lizenziert.
