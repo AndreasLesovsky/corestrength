@@ -43,13 +43,13 @@ export class DiscountService {
     this.discountAmount.set(discount);
 
     if (discount > 0) {
-      this.discountAmount.set(discount);  // Rabattbetrag setzen
-      return true;  // Rabattcode erfolgreich angewendet
+      this.discountAmount.set(discount);
+      return true;
     }
   
-    return false;  // Kein Rabatt angewendet
+    return false;
   }
-  // Rabatt-Code und Betrag zurücksetzen
+  
   resetDiscount() {
     this.discountCode.set(null);
     this.discountAmount.set(0);

@@ -27,12 +27,9 @@ export class HeaderComponent implements OnInit {
     this.sunIcon = document.querySelector('.sun-icon');
     this.moonIcon = document.querySelector('.moon-icon');
     this.themeText = document.getElementById('theme-text');
-
-    // Überprüfe gespeicherten Zustand oder Systempräferenz
     this.checkStoredTheme();
   }
 
-  // Funktion zum Setzen des Modus
   setTheme(theme: 'light' | 'dark'): void {
     // Setze das data-bs-theme Attribut über Renderer2
     this.renderer.setAttribute(this.htmlElement, 'data-bs-theme', theme);
@@ -48,11 +45,9 @@ export class HeaderComponent implements OnInit {
       if (this.themeText) this.themeText.textContent = 'Wechseln zu Dark Mode';
     }
 
-    // Speichern des aktuellen Themas im localStorage
     localStorage.setItem('theme', theme);
   }
 
-  // Überprüfen, ob ein Thema im localStorage gespeichert wurde
   checkStoredTheme(): void {
     const storedTheme: string | null = localStorage.getItem('theme');
     if (storedTheme) {
@@ -67,7 +62,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // Event Listener für den Button zum Umschalten des Modus
   toggleTheme(): void {
     if (this.themeToggler) {
       const currentTheme: string | null = this.htmlElement.getAttribute('data-bs-theme');
@@ -85,15 +79,13 @@ export class HeaderComponent implements OnInit {
       document.getElementById('collapseMegaMenuMobile'),
       document.getElementById('navbarSupportedContent')
     ];
-  
+
     collapseElements.forEach((collapseElement) => {
       if (collapseElement && collapseElement.classList.contains('show')) {
-        // Bootstrap-Collapse-Instanz erstellen (ohne toggle)
         const bsCollapse = new (window as any).bootstrap.Collapse(collapseElement, {
           toggle: false,
         });
-  
-        // Nur schließen, wenn geöffnet
+
         bsCollapse.hide();
       }
     });

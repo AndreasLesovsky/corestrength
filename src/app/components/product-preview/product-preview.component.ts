@@ -11,8 +11,5 @@ import { ProductsService } from '../../services/products.service';
 
 export class ProductPreviewComponent {
   productsService = inject(ProductsService);
-
   products = this.productsService.randomProducts();
-
-  
 }

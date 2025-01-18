@@ -5,7 +5,6 @@ import { Product } from '../models/products.model';
   providedIn: 'root'
 })
 export class ProductsService {
-  // Array mit den Produkten direkt hier definieren
   products = signal<Product[]>([
     {
       id: 1,

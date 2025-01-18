@@ -44,30 +44,28 @@ export class TestimonialsComponent {
   pauseTimeoutId: any;
 
   startAutoToggle(): void {
-    // Überprüfen, ob bereits ein Intervall läuft
     if (this.intervalId) {
-      return; // Verhindert, dass ein weiteres Intervall gestartet wird
+      return;
     }
 
     this.intervalId = setInterval(() => {
-      this.activeIndex = (this.activeIndex + 1) % this.totalItems; // Nächster Index, zyklisch
-    }, 5000); // Alle x Sekunden wechseln
+      this.activeIndex = (this.activeIndex + 1) % this.totalItems;
+    }, 5000);
   }
 
   stopAutoToggle(): void {
     if (this.intervalId) {
-      clearInterval(this.intervalId); // Intervall beenden, wenn es läuft
-      this.intervalId = null; // Setze das Intervall zurück
+      clearInterval(this.intervalId);
+      this.intervalId = null;
     }
   }
 
   pauseAutoToggle(): void {
-    this.stopAutoToggle(); // Automatischen Wechsel anhalten
+    this.stopAutoToggle();
 
-    // Nach 5 Sekunden den Wechsel automatisch wieder aktivieren
     this.pauseTimeoutId = setTimeout(() => {
       this.startAutoToggle();
-    }, 5000); // 5 Sekunden Pause
+    }, 5000);
   }
 
   toggleAccordion(index: number): void {
@@ -75,12 +73,12 @@ export class TestimonialsComponent {
       return; // Verhindert, dass alle Akkordeons geschlossen werden
     }
 
-    this.activeIndex = index; // Setzt den aktiven Index
-    this.pauseAutoToggle();   // Automatischen Wechsel pausieren
+    this.activeIndex = index;
+    this.pauseAutoToggle();
   }
 
   ngOnInit(): void {
-    this.totalItems = 3; // Setze hier die tatsächliche Anzahl deiner Akkordeons
+    this.totalItems = 3;
     this.startAutoToggle();
   }
 }

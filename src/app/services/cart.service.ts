@@ -41,7 +41,7 @@ export class CartService {
 
       setTimeout(() => {
         plusIcon.classList.remove('icon-animation');
-      }, 300); // Zeit, die mit der CSS Animation übereinstimmt (300ms)
+      }, 300); // Zeit, die mit der CSS Animation übereinstimmt
     }
   }
 
@@ -64,7 +64,7 @@ export class CartService {
       if (item.product.id === productId) {
         const newQuantity = Math.max(0, item.quantity + change);
         if (newQuantity === 0) {
-          return null;  // markiere das Element zum Entfernen
+          return null;
         }
         return { ...item, quantity: newQuantity };
       }
@@ -74,8 +74,7 @@ export class CartService {
     this.cart.set(updatedCart);
   }
 
-  // Leert den Warenkorb
   clearCart() {
-    this.cart.set([]);  // Das Signal auf ein leeres Array setzen
+    this.cart.set([]);
   }
 }

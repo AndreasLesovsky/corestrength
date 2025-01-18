@@ -7,14 +7,14 @@ import { ContactComponent } from './contact/contact.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 
 export const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent }, // Standardroute
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   {
     path: 'category/:category/:subcategory',
-    component: SubcategoryComponent, // Dynamische Subkategorie-Komponente
+    component: SubcategoryComponent,
   },
   { path: '**', redirectTo: '' }
 ];

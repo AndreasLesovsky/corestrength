@@ -1,4 +1,4 @@
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CartItem } from '../../models/cart-item.model';
 import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cart-item.component.scss'
 })
 export class CartItemComponent {
-  @Input() item!: CartItem; // Jetzt ist das Item ein CartItem
+  @Input() item!: CartItem; // Jetzt ist das Product ein CartItem
 
   cartService = inject(CartService);
 

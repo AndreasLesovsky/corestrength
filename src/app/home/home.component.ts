@@ -11,4 +11,5 @@ import { ProductPreviewComponent } from '../components/product-preview/product-p
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  
 }

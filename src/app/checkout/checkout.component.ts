@@ -35,7 +35,6 @@ export class CheckoutComponent {
     if (discountSuccess) {
       this.discountApplied = true;
     } else {
-      // Wenn der Code ungültig ist, setzen wir die Fehlermeldung
       this.errorMessage = `Gutscheincode "${this.discountCodeInput}" ist ungültig. Bitte überprüfe den Code und versuche es erneut.`;
       this.discountApplied = false;
     }
@@ -50,13 +49,11 @@ export class CheckoutComponent {
     this.errorMessage = null;
     this.discountCodeInput = '';
   }
-  
 
   // Gesamtpreis berechnen
   total = computed(() => {
     let total = 0;
     for (const item of this.cartService.cart()) {
-      // Preis * Menge
       total += item.product.price * item.quantity;
     }
     return total;
@@ -97,22 +94,22 @@ export class CheckoutComponent {
   };
 
   orderSuccess: boolean = false;
-isLoading: boolean = false;
+  isLoading: boolean = false;
 
-onSubmit(checkoutForm: any) {
-  if (checkoutForm.valid) {
-    this.isLoading = true;  // Ladeanzeige aktivieren
-    setTimeout(() => {
-      this.discountService.resetDiscount();
-      this.discountApplied = false;
-      this.errorMessage = null;
-      this.simulateOrderSuccess();
-      this.cartService.clearCart();
-      checkoutForm.reset();
-      this.isLoading = false;  // Ladeanzeige deaktivieren, wenn der Timeout endet
-    }, 2000);
+  onSubmit(checkoutForm: any) {
+    if (checkoutForm.valid) {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.discountService.resetDiscount();
+        this.discountApplied = false;
+        this.errorMessage = null;
+        this.simulateOrderSuccess();
+        this.cartService.clearCart();
+        checkoutForm.reset();
+        this.isLoading = false;
+      }, 2000);
+    }
   }
-}
 
   simulateOrderSuccess() {
     this.orderSuccess = true;
