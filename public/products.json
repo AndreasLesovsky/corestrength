@@ -1,0 +1,271 @@
+{
+    "categories": [
+      {
+        "name": "Protein & Aminosäuren",
+        "subcategories": [
+          {
+            "name": "Whey Protein",
+            "items": [
+              {
+                "id": 1,
+                "imagePath": "Death1.png",
+                "name": "WheyPro Pure Vanilla (1kg)",
+                "price": "24.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "2348"
+              },
+              {
+                "id": 2,
+                "imagePath": "Death2.png",
+                "name": "IsoWhey Max Chocolate (750g)",
+                "price": "29.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "John Bold",
+                "ratingsCount": "92"
+              },
+              {
+                "id": 3,
+                "imagePath": "Death3.png",
+                "name": "UltraWhey Strawberry Shake (500g)",
+                "price": "19.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "77"
+              }
+            ]
+          },
+          {
+            "name": "Pflanzliche Proteine",
+            "items": [
+              {
+                "id": 4,
+                "imagePath": "Death4.png",
+                "name": "VeganPro Green Apple (1kg)",
+                "price": "34.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "63"
+              },
+              {
+                "id": 5,
+                "imagePath": "Death5.png",
+                "name": "PlantFusion Protein Mix Banana (800g)",
+                "price": "28.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "878"
+              },
+              {
+                "id": 6,
+                "imagePath": "Death6.png",
+                "name": "BioHemp Vanilla Delight (600g)",
+                "price": "26.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "682"
+              }
+            ]
+          },
+          {
+            "name": "Casein Protein",
+            "items": [
+              {
+                "id": 7,
+                "imagePath": "Death7.png",
+                "name": "SlowCasein Night Chocolate (1kg)",
+                "price": "32.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "223"
+              },
+              {
+                "id": 8,
+                "imagePath": "Death8.png",
+                "name": "RecoveryCasein Vanilla Bean (750g)",
+                "price": "29.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "728"
+              },
+              {
+                "id": 9,
+                "imagePath": "Death9.png",
+                "name": "ProteinTime Pure Casein (900g)",
+                "price": "27.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "John Bold",
+                "ratingsCount": "967"
+              }
+            ]
+          },
+          {
+            "name": "Protein Riegel",
+            "items": [
+              {
+                "id": 10,
+                "imagePath": "Death10.png",
+                "name": "PowerBar ChocoCrunch (45g x 12 Stück)",
+                "price": "14.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "758"
+              },
+              {
+                "id": 11,
+                "imagePath": "Death11.png",
+                "name": "FitSnack Peanut Bliss (60g x 10 Stück)",
+                "price": "19.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "385"
+              },
+              {
+                "id": 12,
+                "imagePath": "Death12.png",
+                "name": "HighPro Berry Boost (50g x 15 Stück)",
+                "price": "24.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "585"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Leistung & Energie",
+        "subcategories": [
+          {
+            "name": "Weight Gainer",
+            "items": [
+              {
+                "id": 13,
+                "imagePath": "Death13.png",
+                "name": "MassGainer ChocoNut (4kg)",
+                "price": "49.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "185"
+              },
+              {
+                "id": 14,
+                "imagePath": "Death14.png",
+                "name": "BulkUp Max Banana Split (3kg)",
+                "price": "39.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "John Bold",
+                "ratingsCount": "27"
+              },
+              {
+                "id": 15,
+                "imagePath": "Death15.png",
+                "name": "UltraMass Vanilla Dream (2.5kg)",
+                "price": "34.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "50"
+              }
+            ]
+          },
+          {
+            "name": "Kohlenhydrate & Carb-Supplements",
+            "items": [
+              {
+                "id": 16,
+                "imagePath": "Death16.png",
+                "name": "CarboPower Neutral (1kg)",
+                "price": "19.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "710"
+              },
+              {
+                "id": 17,
+                "imagePath": "Death17.png",
+                "name": "EnergyMax Maltodextrin (500g)",
+                "price": "14.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "268"
+              },
+              {
+                "id": 18,
+                "imagePath": "Death18.png",
+                "name": "FastFuel DextroCharge (2kg)",
+                "price": "24.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "John Bold",
+                "ratingsCount": "852"
+              }
+            ]
+          },
+          {
+            "name": "Pre-Workout-Supplements",
+            "items": [
+              {
+                "id": 19,
+                "imagePath": "Death19.png",
+                "name": "NitroBoost LemonRush (250g)",
+                "price": "19.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "340"
+              },
+              {
+                "id": 20,
+                "imagePath": "Death20.png",
+                "name": "PreXplode Cola Berry (300g)",
+                "price": "24.99",
+                "stars": [true, true, true, true,  false],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "3428"
+              },
+              {
+                "id": 21,
+                "imagePath": "Death21.png",
+                "name": "EnergyFocus Tropical Fire (350g)",
+                "price": "29.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "348"
+              }
+            ]
+          },
+          {
+            "name": "Kreatin & Krealkalinprodukte",
+            "items": [
+              {
+                "id": 22,
+                "imagePath": "Death22.png",
+                "name": "CreatinePure Monohydrate (500g)",
+                "price": "14.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "Pure Vital",
+                "ratingsCount": "238"
+              },
+              {
+                "id": 23,
+                "imagePath": "Death23.png",
+                "name": "KreAlk PowerCaps (120 Kapseln)",
+                "price": "24.99",
+                "stars": [true, true, true, true, true],
+                "manufacturer": "John Bold",
+                "ratingsCount": "559"
+              },
+              {
+                "id": 24,
+                "imagePath": "Death24.png",
+                "name": "CreatinePro Micronized Berry (300g)",
+                "price": "19.99",
+                "stars": [true, true, true, true, false],
+                "manufacturer": "CoreStrength",
+                "ratingsCount": "2998"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

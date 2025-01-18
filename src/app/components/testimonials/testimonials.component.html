@@ -1,0 +1,47 @@
+<section>
+    <div class="container my-5 py-2">
+        <h2 class="text-center fw-bold mb-1 position-relative">
+            <i class="fa fa-quote-left me-2"></i>
+            Starke Meinungen von starken Kunden
+            <i class="fa fa-quote-right ms-2"></i>
+            <div class="position-absolute top-1 start-0 w-100 border-bottom border-2"></div>
+        </h2>
+
+        <div class="accordion d-flex justify-content-center align-items-center height" id="accordionExample">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="py-3">
+                        <ul class="testimonial-list">
+                            <li *ngFor="let testimonial of testimonials; let i = index" class="my-2">
+                                <div class="card p-3" (click)="toggleAccordion(i)"
+                                    [attr.aria-expanded]="activeIndex === i"
+                                    [ngClass]="{'bg-body-tertiary': activeIndex === i}">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <img [src]="testimonial.img" width="50" class="rounded-circle" />
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="font-weight-normal">{{ testimonial.name }}</span>
+                                            <span class="small">{{ testimonial.position }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="py-3">
+                        <div *ngIf="activeIndex !== null" class="card-body">
+                            <h4>{{ testimonials[activeIndex].title }}</h4>
+                            <div class="ratings">
+                                <div *ngFor="let star of testimonials[activeIndex].stars">
+                                    <i class="fa" [ngClass]="{'fa-star text-warning': star, 'fa-star-o': !star}"></i>
+                                </div>
+                            </div>
+                            <p>{{ testimonials[activeIndex].content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

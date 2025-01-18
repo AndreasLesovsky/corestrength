@@ -1,0 +1,24 @@
+.price {
+    text-align: end;
+}
+
+.card-body__inner-container {
+    align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .card-body__inner-container {
+        align-items: start;
+    }
+}
+
+.col-5 input[type="number"]::-webkit-inner-spin-button,
+.col-5 input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.col-5 input[type="number"] {
+  -moz-appearance: textfield; /* Für Firefox */
+  appearance: textfield;
+}

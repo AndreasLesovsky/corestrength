@@ -1,0 +1,41 @@
+<div class="card h-100">
+  <img [src]="product().imagePath" [alt]="product().name" class="card-img-top img-fluid" />
+  <div class="card-body p-2">
+    <span class="position-absolute top-0 end-0 p-1 px-3 mt-1 me-1 fw-bold badge"
+      [class]="product().stock ? 'bg-success' : 'bg-danger'">
+      @if (product().stock) {
+      {{ product().stock }} auf Lager
+      } @else { Ausverkauft }
+    </span>
+
+    <span class="badge text-wrap text-light-emphasis bg-light-subtle border border-light-subtle rounded-pill mb-3">
+      {{ product().Subcategory }}
+    </span>
+    <h3 class="card-title text-inherit mb-0 h5">
+      {{ product().name }}
+    </h3>
+    <small class="card-text text-muted small">{{ product().manufacturer }}</small>
+  </div>
+  <div class="d-flex justify-content-between align-items-center flex-wrap p-2">
+    <!-- Sternebewertung -->
+    <div>
+      <div class="ratings">
+        @for (star of product().stars; track star) {
+        <i class="fa" [ngClass]="{'fa-star text-warning': star, 'fa-star-o': !star}"></i>
+        }
+      </div>
+      <span class="text-muted small">{{ product().ratingsCount }} Bewertungen</span>
+    </div>
+    <!-- Preis -->
+    <span class="fw-bold fs-3 text-body">{{ product().price }} €</span>
+  </div>
+
+  <div class="card-footer p-2">
+    <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center w-100"
+      [disabled]="!product().stock" (click)="cartService.addToCart(product(), $event)">
+      <i class="fa fa-shopping-bag me-1"></i>
+      <i class="fa fa-plus me-2"></i>
+      Hinzufügen
+    </button>
+  </div>
+</div>

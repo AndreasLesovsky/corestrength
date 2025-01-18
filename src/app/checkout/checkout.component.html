@@ -1,0 +1,256 @@
+<section class="h-100 my-5 checkout-section">
+  <div class="container">
+    <div class="row g-4">
+      <h2 class="display-5 mb-0">Bestellung abschließen</h2>
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Einkaufstasche</span>
+          <span class="badge bg-primary rounded-pill">{{cartService.cart().length}}</span>
+        </h4>
+
+        <!-- rechte Spalte Einkaufstasche und Bestellzusammenfassung -->
+        <ul class="list-group mb-3">
+          <!-- Einzelne Produkte -->
+          @for (item of cartService.cart(); track item.product.id) {
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">{{ item.quantity }} &times; {{ item.product.name }}</h6>
+              <small class="text-body-secondary">{{ item.product.Subcategory }}</small>
+            </div>
+            <span class="text-body-secondary price text-end">
+              {{ (item.product.price * item.quantity) | number: '1.2-2' }} €
+            </span>
+          </li>
+          }
+
+          <!-- Zwischensumme -->
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="fw-bold my-0">Zwischensumme</h6>
+            </div>
+            <span class="text-body-secondary fw-bold price text-end">
+              {{ total() | number: '1.2-2' }} €
+            </span>
+          </li>
+
+          <!-- Lieferkosten -->
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Lieferkosten</h6>
+            </div>
+            <span class="text-body-secondary price text-end">
+              {{ shippingCost() | number: '1.2-2' }} €
+            </span>
+          </li>
+
+          <!-- Rabatt -->
+          @if (discountService.discountAmount() > 0) {
+          <li class="list-group-item d-flex justify-content-between bg-body-tertiary lh-sm">
+            <div>
+              <h6 class="my-0 text-success">Rabatt ({{ discountService.discountCode() }})</h6>
+            </div>
+            <span class="text-success price text-end">
+              − {{ discountService.discountAmount() | number: '1.2-2' }} €
+            </span>
+          </li>
+          }
+
+          <!-- Gesamtsumme -->
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="fw-bold my-0">Gesamtsumme</h6>
+            </div>
+            <span class="text-body-secondary fw-bold price text-end">
+              {{ finalTotal() | number: '1.2-2' }} €
+            </span>
+          </li>
+        </ul>
+
+        <hr class="my-4">
+
+        <!-- Gutscheincode Formular -->
+        <form class="card p-2">
+          <label class="form-label w-100" for="discount-code">
+            Gutscheincode einlösen
+          </label>
+          <div class="input-group mb-2">
+            <input type="text" id="discount-code" [(ngModel)]="discountCodeInput" [ngModelOptions]="{standalone: true}"
+              class="form-control" placeholder="Gutscheincode" />
+            <button type="button" class="btn btn-secondary" (click)="applyDiscount()">
+              Hinzufügen
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline-warning w-100" (click)="resetDiscount()">
+            Löschen
+          </button>
+        </form>
+
+        <!-- Nachrichten für Gutscheincode -->
+        @if (discountApplied && discountService.discountCode() !== null) {
+        <div class="alert alert-success mt-3">
+          Gutscheincode {{ discountService.discountCode() }} erfolgreich aktiviert!
+        </div>
+        }
+        @if (errorMessage) {
+        <div class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+        }
+
+
+      </div>
+
+      <!-- linke Spalte Formular -->
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Rechnungsadresse</h4>
+        <form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Vorname</label>
+              <input type="text" class="form-control" id="firstName" [(ngModel)]="formData.firstName" name="firstName"
+                required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Nachname</label>
+              <input type="text" class="form-control" id="lastName" [(ngModel)]="formData.lastName" name="lastName"
+                required>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Emailadresse <span
+                  class="text-body-secondary">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="formData.email" name="email"
+                placeholder="name@beispiel.de">
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Wohnadresse</label>
+              <input type="text" class="form-control" id="address" [(ngModel)]="formData.address" name="address"
+                placeholder="Musterstraße 1" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Postleitzahl</label>
+              <input type="text" class="form-control" id="zip" [(ngModel)]="formData.zip" name="zip" required>
+            </div>
+
+            <div class="col-md-4">
+              <label for="town" class="form-label">Ort</label>
+              <input type="text" class="form-control" id="town" [(ngModel)]="formData.town" name="zip" required>
+            </div>
+
+            <div class="col-5">
+              <label for="country" class="form-label">Land</label>
+              <select class="form-select" id="country" [(ngModel)]="formData.country" name="country" required>
+                <option value="">Wählen...</option>
+                <option>Österreich</option>
+                <option>Deutschland</option>
+                <option>Schweiz</option>
+              </select>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address" [(ngModel)]="formData.sameAddress"
+              name="sameAddress">
+            <label class="form-check-label" for="same-address">Meine Lieferadresse und meine Rechnungsadresse sind
+              gleich</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" [(ngModel)]="formData.saveInfo"
+              name="saveInfo">
+            <label class="form-check-label" for="save-info">Informationen für den nächsten Besuch speichern</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Zahlung</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input"
+                [(ngModel)]="formData.paymentMethod" value="credit" required>
+              <label class="form-check-label" for="credit">Kreditkarte</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input"
+                [(ngModel)]="formData.paymentMethod" value="debit" required>
+              <label class="form-check-label" for="debit">Debitkarte</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
+                [(ngModel)]="formData.paymentMethod" value="paypal" required>
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name auf der Karte</label>
+              <input type="text" class="form-control" id="cc-name" [(ngModel)]="formData.ccName" name="ccName" required>
+              <small class="text-body-secondary">Vollständiger Name wie auf der Karte angegeben</small>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Kartennummer</label>
+              <input type="text" class="form-control" id="cc-number" [(ngModel)]="formData.ccNumber" name="ccNumber"
+                required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Gültig Bis</label>
+              <input type="text" class="form-control" id="cc-expiration" [(ngModel)]="formData.ccExpiration"
+                name="ccExpiration" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" [(ngModel)]="formData.ccCvv" name="ccCvv" required>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="btn btn-primary w-100 btn-lg"
+            [disabled]="!checkoutForm.valid || cartService.cart().length === 0" type="submit">Bestellung
+            abschicken
+          </button>
+        </form>
+
+        <!-- Spinner unter dem Button, nur sichtbar wenn der Timeout läuft -->
+        @if(isLoading) {
+        <div class="d-flex justify-content-center mt-3">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Lädt...</span>
+          </div>
+        </div>
+      }
+
+        <!-- Erfolgsnachricht -->
+        @if(orderSuccess) {
+        <div class="alert alert-success mt-3">
+          Bestellung erfolgreich! Vielen Dank für deinen Einkauf.
+        </div>
+        }
+
+        <!-- Nachricht für nicht valides Formular -->
+        @if(!checkoutForm.valid && !orderSuccess) {
+        <div class="alert alert-warning mt-3">
+          Bitte fülle das Formular aus.
+        </div>
+        }
+
+        <!-- Nachricht für leere Einkaufstasche -->
+        @if(cartService.cart().length === 0) {
+        <div class="alert alert-danger mt-3">
+          Es befinden sich keine Produkte in der Einkaufstasche.
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

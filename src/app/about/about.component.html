@@ -1,0 +1,72 @@
+<section id="about" class="container py-5">
+    <h2 class="display-5 mb-4">Über diese Demo</h2>
+    <div class="row">
+        <!-- Textbereich auf der linken Seite -->
+        <div class="col-md-6 mb-4">
+            <p class="mb-4">
+                Willkommen zu dieser interaktiven E-Commerce-App für Fitness-Supplements! Aber
+                bevor du dich ins Shopping-Abenteuer stürzt...<br><br>
+                Bitte beachte, dass dies keine echte Website ist. Es handelt sich um eine Frontend-Demo, die zeigt, wie
+                eine typische Online-Shop-App funktioniert. Es gibt keine echten Bestellungen, Zahlungen oder Daten -
+                nur reine Funktionalität!
+            </p>
+            <p>Vielen Dank, dass du diese Demo ausprobierst!</p>
+
+            <!-- Liste der Gutscheincodes -->
+            <h4 class="mb-3">Gutscheincodes:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">FITNESS20 - 20% Rabatt auf alle Produkte</li>
+                <li class="list-group-item">SUPPLEMENT10 - 10% Rabatt auf alle Produkte</li>
+                <li class="list-group-item">HEALTHY15 - 15% Rabatt auf Bestellungen über 100€</li>
+                <li class="list-group-item">ENERGY25 - 25% Rabatt auf Energieriegel</li>
+                <li class="list-group-item">GAINS30 - 30% Rabatt auf Weight Gainer</li>
+            </ul>
+        </div>
+
+        <!-- Technische Details auf der rechten Seite -->
+        <div class="col-md-6">
+            <div class="card bg-body-tertiary">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Technische Details:</h4>
+                    <ul class="ps-3 my-0 text-muted">
+                        <li>
+                            <strong>Angular</strong> bildet die Grundlage der Anwendung, während
+                            <strong>Bootstrap</strong> für
+                            die Gestaltung und das responsive Design zuständig ist.
+                        </li>
+                        <hr>
+                        <li>
+                            Für die Navigation wird <strong>Angular Routing</strong> verwendet, um zwischen
+                            verschiedenen Seiten und
+                            Komponenten zu wechseln - fast ohne Ladezeiten.
+                        </li>
+                        <hr>
+                        <li>
+                            Der <strong>Warenkorb</strong> wird als Signal im <code>CartService</code> verwaltet. Die
+                            Quantität der einzelnen Produkte kann bearbeitet werden.
+                        </li>
+                        <hr>
+                        <li>
+                            Gutscheincodes können beim Checkout eingelöst werden, dank Angular Signals sieht man den
+                            Rabatt sofort.
+                        </li>
+                        <hr>
+                        <li>
+                            Der Warenkorb, das Checkout-Formular und die Gutscheincodes werden validiert. Der Benutzer
+                            erhält sofort Rückmeldungen, z. B. bei einem leeren Warenkorb, unvollständigem Formular oder
+                            Änderungen an Gutscheinen.
+                        </li>
+                        <hr>
+                        <li>
+                            Die Darkmode-Funktion ist mit dem <code>data-bs-theme</code>-Attribut umgesetzt und kann mit
+                            einem Button
+                            gesteuert werden. Der Zustand wird im <strong>localStorage</strong> gespeichert, und beim
+                            ersten Besuch
+                            wird automatisch der Gerätezustand des Nutzers übernommen.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

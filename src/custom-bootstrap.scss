@@ -1,0 +1,19 @@
+// Ändere die Primärfarbe
+$primary: #e64528;
+$secondary: #1c8ec2;
+
+// viele andere Variablen lassen sich auf die gleiche Weise überschreiben...
+
+// Importiere Bootstrap nach den Überschreibungen
+// Verwende die Bootstrap-Variablen und -Funktionen
+@use "../node_modules/bootstrap/scss/bootstrap" with (
+  $primary: $primary,
+  $secondary: $secondary
+);
+
+.highlight {
+    color: $primary;
+}
+.fa-dumbbell {
+    color: $primary;
+}

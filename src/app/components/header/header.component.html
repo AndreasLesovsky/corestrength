@@ -1,0 +1,185 @@
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fs-2 fw-bold" routerLink="/" (click)="hideCollapse()">
+                <i class="fas fa-dumbbell"></i>
+                Core<span class="highlight">Strength</span>
+            </a>
+
+            <div class="order-lg-2 d-flex align-items-center gap-3">
+                <!-- Einkaufswagen-Button -->
+                <button class="btn btn-primary position-relative d-flex align-items-center justify-content-center "
+                    routerLink="/cart" (click)="hideCollapse()">
+                    <i class="fas fa-shopping-bag" style="font-size: 24px;"></i>
+                    <!-- Badge mit Anzahl der Artikel -->
+                    @if (cartService.cart().length > 0) {
+                    <span class="badge rounded-circle bg-dark text-white border position-absolute"
+                        style="font-size: 14px; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; right: -10px; top: -10px;">
+                        {{ cartService.cart().length }}
+                    </span>
+                    }
+                </button>
+
+                <!-- Hamburger Menü -->
+                <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fa fa-bars" style="font-size: 24px;"></i></span>
+                    <span class="visually-hidden">Navigation togglen</span>
+                </button>
+            </div>
+
+            <!-- Navigationsinhalt -->
+            <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-5 pe-2">
+                        <a class="nav-link" routerLink="/" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }" (click)="hideCollapse()">Home</a>
+                    </li>
+                    <li class="nav-item fs-5 pe-2 d-none d-lg-block">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="collapse"
+                            href="#collapseMegaMenu">Produkte</a>
+                    </li>
+
+                    <!-- Mobile Megamenü -->
+                    <li class="nav-item fs-5 pe-2 d-lg-none">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="collapse"
+                            href="#collapseMegaMenuMobile">Produkte</a>
+                        <ul class="collapse ps-3 list-unstyled" id="collapseMegaMenuMobile">
+                            <li>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="collapse"
+                                    href="#collapseMegaMenuMobileList1">Protein & BCAA</a>
+                                <ul class="collapse ps-3 list-unstyled" id="collapseMegaMenuMobileList1">
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Protein & Aminosäuren', 'Whey Protein']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Whey Protein</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Protein & Aminosäuren', 'Pflanzliche Proteine']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Pflanzliche
+                                            Proteine</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Protein & Aminosäuren', 'Casein Protein']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Casein Protein</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Protein & Aminosäuren', 'BCAA']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Aminosäuren & BCAAs</a>
+                                    </li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Protein & Aminosäuren', 'Protein Riegel']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Protein Riegel</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="collapse"
+                                    href="#collapseMegaMenuMobileList2">Leistung & Energie</a>
+                                <ul class="collapse ps-3 list-unstyled" id="collapseMegaMenuMobileList2">
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Leistung & Energie', 'Weight Gainer']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Weight Gainer</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Leistung & Energie', 'Kohlenhydrate & Carb-Supplements']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Carb-Supplements</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Leistung & Energie', 'Pre-Workout-Supplements']"
+                                            routerLinkActive="active"
+                                            (click)="hideCollapse()">Pre-Workout-Supplements</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Leistung & Energie', 'Kreatin & Krealkalinprodukte']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Kreatinprodukte</a></li>
+                                    <li><a class="nav-link"
+                                            [routerLink]="['/category', 'Leistung & Energie', 'Energie Riegel']"
+                                            routerLinkActive="active" (click)="hideCollapse()">Energie-Riegel</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item fs-5 pe-2">
+                        <a class="nav-link" routerLink="/about" routerLinkActive="active"
+                            (click)="hideCollapse()">About</a>
+                    </li>
+                    <li class="nav-item fs-5 pe-2">
+                        <a class="nav-link" routerLink="/contact" routerLinkActive="active"
+                            (click)="hideCollapse()">Kontakt</a>
+                    </li>
+                </ul>
+                <button id="theme-toggler" class="btn btn-outline-secondary me-3" (click)="toggleTheme()">
+                    <i class="fas fa-sun theme-icon sun-icon" style="font-size: 24px;"></i>
+                    <i class="fas fa-moon theme-icon moon-icon visually-hidden"></i>
+                    <span class="visually-hidden" id="theme-text">Wechseln zu Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Megamenü -->
+    <div class="megamenu container position-absolute bg-body-tertiary start-0 end-0 d-none d-lg-block">
+        <div class="collapse" id="collapseMegaMenu">
+            <div class="row g-0 py-4">
+                <div class="col-xl-5 d-none d-xl-block ps-3">
+                    <img src="greg-rosenke-8DcwvlVXIVw-unsplash.png" class="img-fluid" alt="Mega Menü Bild">
+                </div>
+                <div class="col-4 col-xl-2 ps-3">
+                    <h4 class="fs-5 pb-2">Protein & BCAA</h4>
+                    <ul class="list-group fs-6">
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Whey Protein']"
+                                routerLinkActive="active" (click)="hideCollapse()">Whey Protein</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Pflanzliche Proteine']"
+                                routerLinkActive="active" (click)="hideCollapse()">Pflanzliche
+                                Proteine</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Casein Protein']"
+                                routerLinkActive="active" (click)="hideCollapse()">Casein Protein</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'BCAA']" routerLinkActive="active"
+                                (click)="hideCollapse()">Aminosäuren &
+                                BCAAs</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Protein Riegel']"
+                                routerLinkActive="active" (click)="hideCollapse()">Protein Riegel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 col-xl-2 ps-3">
+                    <h4 class="fs-5 pb-2">Leistung & Energie</h4>
+                    <ul class="list-group fs-6">
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Weight Gainer']"
+                                routerLinkActive="active" (click)="hideCollapse()">Weight Gainer</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Kohlenhydrate & Carb-Supplements']"
+                                routerLinkActive="active" (click)="hideCollapse()">Carb-Supplements</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Pre-Workout-Supplements']"
+                                routerLinkActive="active" (click)="hideCollapse()">Pre-Workout-Supplements</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Kreatin & Krealkalinprodukte']"
+                                routerLinkActive="active" (click)="hideCollapse()">Kreatinprodukte</a></li>
+                        <li class="list-group-item bg-transparent border-0 py-1 ps-0"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Energie Riegel']"
+                                routerLinkActive="active" (click)="hideCollapse()">Energie-Riegel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 col-xl-3 px-3">
+                    <h4 class="fs-5 pb-2">Meist gesucht</h4>
+                    <form class="d-flex mb-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary" type="button">Search</button>
+                    </form>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">Whey Protein</span>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">Kreatin</span>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">BCAA</span>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">Pre-Workout</span>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">Weight Gainer</span>
+                    <span class="badge bg-body-secondary text-body fs-6 p-2 mb-2 me-2">Protein Riegel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,73 @@
+<footer>
+    <div class="bg-body-tertiary border-top pt-4 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 mb-3">
+                    <h5>Produkte</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Whey Protein']"
+                                routerLinkActive="active" class="nav-link p-0 text-body-secondary"
+                                (click)="scrollService.scrollToTop()">Whey Protein</a></li>
+                        <li class="nav-item mb-2"><a
+                                [routerLink]="['/category', 'Protein & Aminosäuren', 'Pflanzliche Proteine']"
+                                routerLinkActive="active" class="nav-link p-0 text-body-secondary"
+                                (click)="scrollService.scrollToTop()">Pflanzliche
+                                Proteine</a></li>
+                        <li class="nav-item mb-2"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Pre-Workout-Supplements']"
+                                routerLinkActive="active" class="nav-link p-0 text-body-secondary"
+                                (click)="scrollService.scrollToTop()">Pre-Workout-Supplements</a></li>
+                        <li class="nav-item mb-2"><a
+                                [routerLink]="['/category', 'Leistung & Energie', 'Kreatin & Krealkalinprodukte']"
+                                routerLinkActive="active" class="nav-link p-0 text-body-secondary"
+                                (click)="scrollService.scrollToTop()">Kreatinprodukte</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-3">
+                    <h5>Sitemap</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                                class="nav-link p-0 text-body-secondary" (click)="scrollService.scrollToTop()">Home</a></li>
+                        <li class="nav-item mb-2"><button (click)="scrollService.scrollToTop()" class="nav-link p-0 text-body-secondary"
+                                >Produkte</button></li>
+                        <li class="nav-item mb-2"><a routerLink="/about" routerLinkActive="active"
+                                class="nav-link p-0 text-body-secondary" (click)="scrollService.scrollToTop()">About</a>
+                        </li>
+                        <li class="nav-item mb-2"><a routerLink="/contact" routerLinkActive="active"
+                                class="nav-link p-0 text-body-secondary" (click)="scrollService.scrollToTop()">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-3">
+                    <form>
+                        <h5>Abonniere unseren Newsletter!</h5>
+                        <p>Erhalte monatliche Gutscheincodes und Neuigkeiten zu unseren Produkten.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email Addresse</label>
+                            <input id="newsletter1" type="email" class="form-control" placeholder="Email Addresse">
+                            <button class="btn btn-primary" type="button">Abonnieren</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-body-secondary border-top">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3">
+                <!-- Copyright -->
+                <p class="order-2 order-sm-1">&copy; 2025 <strong>CoreStrength GmbH</strong> | Alle Rechte vorbehalten.</p>
+                <!-- Social Links -->
+                <ul class="list-unstyled d-flex order-1 order-sm-2">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</footer>
