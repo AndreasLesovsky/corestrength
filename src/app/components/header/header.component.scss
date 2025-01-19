@@ -3,13 +3,19 @@
     font-size: 1.5rem;
     transform: translateY(0.05rem);
 }
+
 .fa-bars {
     transform: translateY(0.15rem);
 }
+
 div.megamenu {
     border-radius: 0 0 0.5rem 0.5rem;
     z-index: 1000;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
+
 nav a.active {
     text-decoration: underline;
-  }
+}
