@@ -8,7 +8,7 @@ export class ProductsService {
   products = signal<Product[]>([
     {
       id: 1,
-      imagePath: "product7.png",
+      imagePath: "product7.webp",
       name: "WheyPro Pure Vanilla (1kg)",
       price: 24.99,
       stars: [true, true, true, true, true],
@@ -20,7 +20,7 @@ export class ProductsService {
     },
     {
       id: 2,
-      imagePath: "product7.png",
+      imagePath: "product7.webp",
       name: "IsoWhey Max Chocolate (750g)",
       price: 29.99,
       stars: [true, true, true, true, false],
@@ -32,7 +32,7 @@ export class ProductsService {
     },
     {
       id: 3,
-      imagePath: "product7.png",
+      imagePath: "product7.webp",
       name: "UltraWhey Strawberry Shake (500g)",
       price: 19.99,
       stars: [true, true, true, true, true],
@@ -44,7 +44,7 @@ export class ProductsService {
     },
     {
       id: 4,
-      imagePath: "product8.png",
+      imagePath: "product8.webp",
       name: "VeganPro Green Apple (1kg)",
       price: 34.99,
       stars: [true, true, true, true, true],
@@ -56,7 +56,7 @@ export class ProductsService {
     },
     {
       id: 5,
-      imagePath: "product8.png",
+      imagePath: "product8.webp",
       name: "PlantFusion Protein Mix Banana (800g)",
       price: 28.99,
       stars: [true, true, true, true, true],
@@ -68,7 +68,7 @@ export class ProductsService {
     },
     {
       id: 6,
-      imagePath: "product8.png",
+      imagePath: "product8.webp",
       name: "BioHemp Vanilla Delight (600g)",
       price: 26.99,
       stars: [true, true, true, true, true],
@@ -80,7 +80,7 @@ export class ProductsService {
     },
     {
       id: 7,
-      imagePath: "product9.png",
+      imagePath: "product9.webp",
       name: "SlowCasein Night Chocolate (1kg)",
       price: 32.99,
       stars: [true, true, true, true, true],
@@ -92,7 +92,7 @@ export class ProductsService {
     },
     {
       id: 8,
-      imagePath: "product9.png",
+      imagePath: "product9.webp",
       name: "RecoveryCasein Vanilla Bean (750g)",
       price: 29.99,
       stars: [true, true, true, true, true],
@@ -104,7 +104,7 @@ export class ProductsService {
     },
     {
       id: 9,
-      imagePath: "product9.png",
+      imagePath: "product9.webp",
       name: "ProteinTime Pure Casein (900g)",
       price: 27.99,
       stars: [true, true, true, true, false],
@@ -116,7 +116,7 @@ export class ProductsService {
     },
     {
       id: 10,
-      imagePath: "product2.png",
+      imagePath: "product2.webp",
       name: "PowerBar ChocoCrunch (45g x 12 Stück)",
       price: 14.99,
       stars: [true, true, true, true, true],
@@ -128,7 +128,7 @@ export class ProductsService {
     },
     {
       id: 11,
-      imagePath: "product2.png",
+      imagePath: "product2.webp",
       name: "FitSnack Peanut Bliss (60g x 10 Stück)",
       price: 19.99,
       stars: [true, true, true, true, false],
@@ -140,7 +140,7 @@ export class ProductsService {
     },
     {
       id: 12,
-      imagePath: "product2.png",
+      imagePath: "product2.webp",
       name: "HighPro Berry Boost (50g x 15 Stück)",
       price: 24.99,
       stars: [true, true, true, true, true],
@@ -152,7 +152,7 @@ export class ProductsService {
     },
     {
       id: 13,
-      imagePath: "product10.png",
+      imagePath: "product10.webp",
       name: "MassGainer ChocoNut (4kg)",
       price: 49.99,
       stars: [true, true, true, true, false],
@@ -164,7 +164,7 @@ export class ProductsService {
     },
     {
       id: 14,
-      imagePath: "product10.png",
+      imagePath: "product10.webp",
       name: "BulkUp Max Banana Split (3kg)",
       price: 39.99,
       stars: [true, true, true, true, true],
@@ -176,7 +176,7 @@ export class ProductsService {
     },
     {
       id: 15,
-      imagePath: "product10.png",
+      imagePath: "product10.webp",
       name: "UltraMass Vanilla Dream (2.5kg)",
       price: 34.99,
       stars: [true, true, true, true, true],
@@ -188,7 +188,7 @@ export class ProductsService {
     },
     {
       id: 16,
-      imagePath: "product12.png",
+      imagePath: "product12.webp",
       name: "CarboPower Neutral (1kg)",
       price: 19.99,
       stars: [true, true, true, true, true],
@@ -200,7 +200,7 @@ export class ProductsService {
     },
     {
       id: 17,
-      imagePath: "product11.png",
+      imagePath: "product11.webp",
       name: "EnergyMax Maltodextrin (500g)",
       price: 14.99,
       stars: [true, true, true, true, true],
@@ -212,7 +212,7 @@ export class ProductsService {
     },
     {
       id: 18,
-      imagePath: "product12.png",
+      imagePath: "product12.webp",
       name: "FastFuel DextroCharge (2kg)",
       price: 24.99,
       stars: [true, true, true, true, false],
@@ -224,7 +224,7 @@ export class ProductsService {
     },
     {
       id: 19,
-      imagePath: "product6.png",
+      imagePath: "product6.webp",
       name: "NitroBoost LemonRush (250g)",
       price: 19.99,
       stars: [true, true, true, true, true],
@@ -236,7 +236,7 @@ export class ProductsService {
     },
     {
       id: 20,
-      imagePath: "product6.png",
+      imagePath: "product6.webp",
       name: "PreXplode Cola Berry (300g)",
       price: 24.99,
       stars: [true, true, true, true, false],
@@ -248,7 +248,7 @@ export class ProductsService {
     },
     {
       id: 21,
-      imagePath: "product6.png",
+      imagePath: "product6.webp",
       name: "EnergyFocus Tropical Fire (350g)",
       price: 29.99,
       stars: [true, true, true, true, true],
@@ -260,7 +260,7 @@ export class ProductsService {
     },
     {
       id: 22,
-      imagePath: "product3.png",
+      imagePath: "product3.webp",
       name: "CreatinePure Monohydrate (500g)",
       price: 14.99,
       stars: [true, true, true, true, true],
@@ -272,7 +272,7 @@ export class ProductsService {
     },
     {
       id: 23,
-      imagePath: "product4.png",
+      imagePath: "product4.webp",
       name: "KreAlk PowerCaps (200 Kapseln)",
       price: 24.99,
       stars: [true, true, true, true, true],
@@ -284,7 +284,7 @@ export class ProductsService {
     },
     {
       id: 24,
-      imagePath: "product3.png",
+      imagePath: "product3.webp",
       name: "CreatinePro Micronized Berry (300g)",
       price: 19.99,
       stars: [true, true, true, true, false],
@@ -296,7 +296,7 @@ export class ProductsService {
     },
     {
       id: 25,
-      imagePath: "product5.png",
+      imagePath: "product5.webp",
       name: "BCAA Turbo Boost (300g)",
       price: 22.99,
       stars: [true, true, true, true, true],
@@ -308,7 +308,7 @@ export class ProductsService {
     },
     {
       id: 26,
-      imagePath: "product5.png",
+      imagePath: "product5.webp",
       name: "BCAA+ Amino Recovery (400g)",
       price: 27.49,
       stars: [true, true, true, true, false],
@@ -320,7 +320,7 @@ export class ProductsService {
     },
     {
       id: 27,
-      imagePath: "product5.png",
+      imagePath: "product5.webp",
       name: "BCAA Complex 2:1:1 (500g)",
       price: 19.99,
       stars: [true, true, true, true, true],
@@ -332,7 +332,7 @@ export class ProductsService {
     },
     {
       id: 28,
-      imagePath: "product1.png",
+      imagePath: "product1.webp",
       name: "EnergyBar Boost (45g x 15 Stück)",
       price: 17.99,
       stars: [true, true, true, true, true],
@@ -344,7 +344,7 @@ export class ProductsService {
     },
     {
       id: 29,
-      imagePath: "product1.png",
+      imagePath: "product1.webp",
       name: "PowerSnack Energy Bites (60g x 10 Stück)",
       price: 21.49,
       stars: [true, true, true, true, false],
@@ -356,7 +356,7 @@ export class ProductsService {
     },
     {
       id: 30,
-      imagePath: "product1.png",
+      imagePath: "product1.webp",
       name: "ChargeUp Energy Bar (50g x 20 Stück)",
       price: 19.49,
       stars: [true, true, true, true, true],
@@ -383,4 +383,44 @@ export class ProductsService {
         product.Category === category && product.Subcategory === subcategory
     );
   }
+
+  getAllProducts() {
+    return this.products(); // Gibt alle Produkte im Array zurück
+  }
+
+
+
+// Paginierte Produkte (z. B. für die Anzeige der ersten 10 Produkte pro Seite)
+pageSize = 8;
+currentPage = signal<number>(1);
+
+getPagedProducts() {
+  const start = (this.currentPage() - 1) * this.pageSize;
+  const end = start + this.pageSize;
+  return this.products().slice(start, end);
+}
+
+// Gesamtanzahl der Seiten
+getTotalPages() {
+  return Math.ceil(this.products().length / this.pageSize);
+}
+
+// Vorherige Seite
+prevPage() {
+  if (this.currentPage() > 1) {
+    this.currentPage.update((value) => value - 1);
+  }
+}
+
+// Nächste Seite
+nextPage() {
+  if (this.currentPage() < this.getTotalPages()) {
+    this.currentPage.update((value) => value + 1);
+  }
+}
+
+onPageChange(page: number) {
+  this.currentPage.set(page + 1);
+}
+
 }

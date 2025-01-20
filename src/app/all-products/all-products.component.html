@@ -1,0 +1,42 @@
+<section id="all-products">
+    <div class="container mx-auto my-5 py-2">
+        <h2 class="display-5 mb-4">
+            Alle Produkte
+        </h2>
+
+        <div class="row g-4">
+            @for (product of productsService.getPagedProducts(); track product.id) {
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+            }
+        </div>
+
+        <!-- Paginierungs-Steuerung -->
+        <div class="d-flex justify-content-center">
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination">
+                    <!-- Vorherige Seite -->
+                    <li class="page-item" [class.disabled]="productsService.currentPage() === 1">
+                        <button class="page-link" (click)="productsService.prevPage()">Previous</button>
+                    </li>
+
+                    <!-- Dynamisch generierte Seiten -->
+                    @for (page of pages; track page) {
+                    <li class="page-item" [class.active]="productsService.currentPage() === page + 1">
+                        <button class="page-link" (click)="productsService.onPageChange(page)">
+                            {{ page + 1 }}
+                        </button>
+                    </li>
+                    }
+
+                    <!-- Nächste Seite -->
+                    <li class="page-item"
+                        [class.disabled]="productsService.currentPage() === productsService.getTotalPages()">
+                        <button class="page-link" (click)="productsService.nextPage()">Next</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

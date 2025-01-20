@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Product } from '../models/products.model';
 import { CartService } from '../services/cart.service';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
@@ -16,7 +16,6 @@ export class SubcategoryComponent {
   subcategory: string = '';
   products: Product[] = [];
 
-  // Injecte die notwendigen Services
   cartService = inject(CartService);
   productsService = inject(ProductsService);
   activatedRoute = inject(ActivatedRoute);
