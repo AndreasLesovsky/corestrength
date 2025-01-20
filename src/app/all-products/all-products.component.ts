@@ -12,16 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './all-products.component.scss'
 })
 export class AllProductsComponent {
-    cartService = inject(CartService);
-    productsService = inject(ProductsService);
-    pages: number[] = [];
+  cartService = inject(CartService);
+  productsService = inject(ProductsService);
+  pages: number[] = [];
 
-    ngOnInit() {
-      this.updatePages();
-    }
-  
-    updatePages() {
-      const totalPages = this.productsService.getTotalPages();
-      this.pages = Array.from({ length: totalPages }, (_, i) => i); // Erstelle ein Array mit Seitenzahlen
-    }
+  ngOnInit() {
+    this.updatePages();
+  }
+
+  updatePages() {
+    const totalPages = this.productsService.getTotalPages();
+    this.pages = Array.from({ length: totalPages }, (_, i) => i); // Erstelle ein Array mit Seitenzahlen
+  }
 }

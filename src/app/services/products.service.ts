@@ -384,43 +384,37 @@ export class ProductsService {
     );
   }
 
-  getAllProducts() {
-    return this.products(); // Gibt alle Produkte im Array zurück
+  // Paginierte Produkte
+  pageSize = 8;
+  currentPage = signal<number>(1);
+
+  getPagedProducts() {
+    const start = (this.currentPage() - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    return this.products().slice(start, end);
   }
 
-
-
-// Paginierte Produkte (z. B. für die Anzeige der ersten 10 Produkte pro Seite)
-pageSize = 8;
-currentPage = signal<number>(1);
-
-getPagedProducts() {
-  const start = (this.currentPage() - 1) * this.pageSize;
-  const end = start + this.pageSize;
-  return this.products().slice(start, end);
-}
-
-// Gesamtanzahl der Seiten
-getTotalPages() {
-  return Math.ceil(this.products().length / this.pageSize);
-}
-
-// Vorherige Seite
-prevPage() {
-  if (this.currentPage() > 1) {
-    this.currentPage.update((value) => value - 1);
+  // Gesamtanzahl der Seiten
+  getTotalPages() {
+    return Math.ceil(this.products().length / this.pageSize);
   }
-}
 
-// Nächste Seite
-nextPage() {
-  if (this.currentPage() < this.getTotalPages()) {
-    this.currentPage.update((value) => value + 1);
+  // Vorherige Seite
+  prevPage() {
+    if (this.currentPage() > 1) {
+      this.currentPage.update((value) => value - 1);
+    }
   }
-}
 
-onPageChange(page: number) {
-  this.currentPage.set(page + 1);
-}
+  // Nächste Seite
+  nextPage() {
+    if (this.currentPage() < this.getTotalPages()) {
+      this.currentPage.update((value) => value + 1);
+    }
+  }
+
+  onPageChange(page: number) {
+    this.currentPage.set(page + 1);
+  }
 
 }
